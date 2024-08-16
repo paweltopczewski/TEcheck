@@ -301,7 +301,9 @@ https://github.com/rapid7/metasploit-framework/blob/master/modules/post/windows/
         }
 }
 
-##CheckVM
+
+
+#####
 
 # Katalog na lokalnym systemie
 $OutputDir = "VM_Config_Info"
@@ -364,4 +366,3 @@ foreach ($file in $files) {
 }
 
 Write-Output "All files uploaded to Nextcloud."
-
