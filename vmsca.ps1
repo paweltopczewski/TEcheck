@@ -1,3 +1,8 @@
+
+
+function Check-VM
+{
+
 <# 
 .SYNOPSIS 
 Nishang script which detects whether it is in a known virtual machine.
