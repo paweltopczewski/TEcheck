@@ -59,4 +59,26 @@ foreach ($file in $files) {
 }
 
 Write-Output "All files uploaded to Nextcloud."
+$qemu = Get-Childitem hklm:\hardware\devicemap\scsi -recurse | gp -Name identifier
+    if ($qemu -match "qemu")
+        {
+    
+            $qemuvm = $true
+    
+        }
+    
+    if (!$qemuvm)
+        {
+        $qemu = Get-ItemProperty hklm:HARDWARE\DESCRIPTION\System\CentralProcessor\0 -Name ProcessorNameString
+        if ($qemu -match "qemu")
+            {
+                $qemuvm = $true
+            }
+        }    
 
+    if ($qemuvm)
+        {
+    
+         "This is a Qemu machine."
+    
+        }
